@@ -1,0 +1,41 @@
+//Ziad Attiya, Aug 2022, simple calculator reader
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello Amelia!!");
+
+        String add= "+";
+        String minus= "-";
+        String mult= "*";
+        String divi= "/";
+        double num1=0;
+        double num2=0;
+
+        try {
+            System.out.print("Enter first number: ");
+            Scanner in1 = new Scanner (System.in);
+            num1 = in1.nextDouble();
+
+
+            System.out.print("Enter second number: ");
+            Scanner in2 = new Scanner(System.in);
+            num2 = in2.nextDouble();
+        } catch (Exception e) {
+            System.out.println("could not do this!");
+            return;
+        }
+
+
+        System.out.print("Enter operation(+,-,*,/): ");
+        Scanner in3 = new Scanner (System.in);
+        var oper = in3.next();
+        if (oper.equals(add)) System.out.println("result is" +
+                ": "+(num1+num2));
+        if (oper.equals(minus)) System.out.println("result is: "+ (num1-num2));
+        if (oper.equals(divi)) System.out.println("result is: "+(num1/num2));
+        if (oper.equals(mult)) System.out.println("result is: "+(num1*num2));
+
+    }
+}
